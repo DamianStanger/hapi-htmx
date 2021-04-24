@@ -13,7 +13,8 @@
     "@hapi/boom": "^9.1.2",
     "@hapi/hapi": "^20.1.2",
     "@hapi/vision": "^6.0.1",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@hapi/code": "^8.0.3",
