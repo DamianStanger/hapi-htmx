@@ -13,18 +13,25 @@ const internals = {
 
 internals.rootHandler = function (request, h) {
   return h.view('index', {
-    title: `Running hapi ${request.server.version}`,
+    title: 'The dynamic title',
     message: 'Hello world!',
     year: internals.thisYear
   });
 };
 
 internals.uuidHandler = function (request, h) {
-  return h.view('uuid', {
-    uuid: v1()
-  });
+  return h.view(
+    'uuid',
+    {uuid: v1()},
+    {layout: false}
+  );
 };
 
+internals.quickLinksHandler = function (request, h) {
+  return h.view('quick-links', {
+    title: `Quick links`,
+  });
+};
 
 internals.main = async function () {
 
@@ -43,6 +50,7 @@ internals.main = async function () {
 
   server.route({ method: 'GET', path: '/', handler: internals.rootHandler });
   server.route({ method: 'GET', path: '/uuid', handler: internals.uuidHandler });
+  server.route({ method: 'GET', path: '/quick-links', handler: internals.quickLinksHandler });
 
   await server.start();
   console.log('Hapi server is running at ' + server.info.uri);
