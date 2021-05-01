@@ -1,10 +1,8 @@
 <div>
   <h1>Site Map</h1>
   <ul>
-    <li><a href="/">xxxxxx</a></li>
-    <li><a href="/">xxxxxx</a></li>
-    <li><a href="/">xxxxxx</a></li>
-    <li><a href="/">xxxxxx</a></li>
-    <li><a href="/">xxxxxx</a></li>
+    {{#each locations}}
+    <li><a href="/location/{{name}}">{{name}}</a></li>
+    {{/each}}
   </ul>
 </div>

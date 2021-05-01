@@ -9,5 +9,4 @@
   * this will enable better SEO
 * Create a simple form to allow changing of the search terms on the page
 * Use htmx to keep url history
-* Find a data set that contains locations and some sort of searchable/sortable fields
-  * maybe restaurants with ratings or something?
+* ✔ Find a data set that contains locations and some sort of searchable/sortable fields
