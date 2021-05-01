@@ -2,9 +2,9 @@
   "name": "hapi-htmx",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "nodemon src/index.js --watch src",
+    "start": "nodemon src/app.js --watch src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
