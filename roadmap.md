@@ -11,3 +11,6 @@
 * Use htmx to keep url history
 * ✔ Find a data set that contains locations and some sort of searchable/sortable fields
 * ✔ Add a site map with all the locations listed
+* Add date filter
+* Add date to the url
+* Add dates in the sitemap and quicklinks
