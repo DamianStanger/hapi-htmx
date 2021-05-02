@@ -1,5 +1,6 @@
 'use strict';
 const locationRepo = require("../core/locationRepo");
+const accidentRepo = require("../core/accidentRepo");
 
 
 function thisYear() {
@@ -9,9 +10,12 @@ function thisYear() {
 function homeHandler (request, h) {
   const location = locationRepo.findByName(request.params.location) || locationRepo.findAll()[0];
   const title = `Accidents in ${location.name}` ;
+  const results = accidentRepo.findByLocation(location.id);
+
   return h.view('home', {
     title,
     location,
+    results,
     message: 'Hello world!',
     year: thisYear
   });

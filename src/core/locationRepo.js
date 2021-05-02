@@ -1,5 +1,6 @@
 const locations = require("../../data/locations");
 
+
 const locationRepo = {
   "findAll": () => locations,
   "findByName": name => {
@@ -11,5 +12,6 @@ const locationRepo = {
   },
   "findById": id => locations.filter(l => l.id === id)[0]
 }
+
 
 module.exports = locationRepo;
