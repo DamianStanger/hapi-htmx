@@ -1,4 +1,5 @@
 'use strict';
+const locationRepo = require("../core/locationRepo");
 
 
 function thisYear() {
@@ -6,8 +7,8 @@ function thisYear() {
 }
 
 function homeHandler (request, h) {
-  const location = `Accidents in ${request.params.location || "United Kingdom"}` ;
-  const title = location
+  const location = locationRepo.findByName(request.params.location) || locationRepo.findAll()[0];
+  const title = `Accidents in ${location.name}` ;
   return h.view('home', {
     title,
     location,

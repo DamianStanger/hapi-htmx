@@ -1,5 +1,5 @@
 'use strict';
-const locations = require("../../data/locations.json").locations;
+const locations = require("../core/locationRepo").findAll();
 
 
 function siteMapHandler (request, h) {
