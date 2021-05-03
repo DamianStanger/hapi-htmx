@@ -1,6 +1,6 @@
 'use strict';
 const locationRepo = require("../core/locationRepo");
-const accidentRepo = require("../core/accidentRepo");
+const accidentsRankedByMakeForLocation = require("../core/accidentsRankedByMakeForLocation");
 
 
 function thisYear() {
@@ -10,7 +10,7 @@ function thisYear() {
 function homeHandler (request, h) {
   const location = locationRepo.findByName(request.params.location) || locationRepo.findAll()[0];
   const title = `Accidents in ${location.name}` ;
-  const results = accidentRepo.findByLocation(location.id);
+  const results = accidentsRankedByMakeForLocation(location.id);
 
   return h.view('home', {
     title,
