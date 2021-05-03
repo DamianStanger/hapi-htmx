@@ -8,7 +8,8 @@
 * ✔ Add a site map with all the locations listed
 * ✔ Parameterise the url so the title takes the name of the primary term
   * this will enable better SEO
-* Add results list to the home page that shows all the accidents for a given location
+* ✔ Add results list to the home page that shows all the accidents for a given location
+* Add make logo and brief description for the car model 
 * Add dropdown to allow for selecting a different loaction in home page
   * When selection changes reload the page
   * Use htmx to load the results html fragment
