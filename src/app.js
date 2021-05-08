@@ -9,6 +9,7 @@ const home = require("./routes/home");
 const quickLinks = require("./routes/quickLinks");
 const siteMap = require("./routes/siteMap");
 const uuid = require("./routes/uuid");
+const results = require("./routes/results");
 
 const counter = require("./templates/functions/counter");
 
@@ -38,6 +39,7 @@ async function main() {
   quickLinks(server);
   siteMap(server);
   uuid(server);
+  results(server);
 
   await server.start();
   console.log('Hapi server is running at ' + server.info.uri);

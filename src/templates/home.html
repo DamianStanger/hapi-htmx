@@ -4,10 +4,10 @@
   <div>
     <h3>Popular quick links:</h3>
     <ul>
-      <li><a href="/location/england">England</a></li>
-      <li><a href="/location/london">London</a></li>
-      <li><a href="/location/greater-manchester">Manchester</a></li>
-      <li><a href="/location/west-midlands">West Midlands</a></li>
+      <li><a href="/location/england" hx-get="/results/england" hx-target="#results" hx-swap="outerHTML">England</a></li>
+      <li><a href="/location/london" hx-get="/results/london" hx-target="#results" hx-swap="outerHTML">London</a></li>
+      <li><a href="/location/greater-manchester" hx-get="/results/greater-manchester" hx-target="#results" hx-swap="outerHTML">Manchester</a></li>
+      <li><a href="/location/west-midlands" hx-get="/results/west-midlands" hx-target="#results" hx-swap="outerHTML">West Midlands</a></li>
     </ul>
     {{> results}}
   </div>
