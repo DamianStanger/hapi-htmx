@@ -10,10 +10,13 @@
   * this will enable better SEO
 * ✔ Add results list to the home page that shows all the accidents for a given location
 * Add make logo and brief description for the car model 
-* Add dropdown to allow for selecting a different loaction in home page
-  * When selection changes reload the page
-  * Use htmx to load the results html fragment
-  * Use htmx to keep url history for reloaded fragment
+* ✔ Add dropdown to allow for selecting a different loaction in home page
+  * ✔ When selection changes reload the page
+  * ✔ Use htmx to load the results html fragment
+  * ✔ Use htmx to keep url history for reloaded fragment
+* Use material design to make the page look reasonable (sort of...)
+* Change the page title when the results partial loads
+* Change the page header when the results partial loads
 * Add dates in the sitemap and quicklinks
 * Ensure results on the home page show results for date range selected 
 * Add date filter
