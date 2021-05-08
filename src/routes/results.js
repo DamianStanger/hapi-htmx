@@ -4,7 +4,8 @@ const accidentsRankedByMakeForLocation = require("../core/accidentsRankedByMakeF
 
 
 function resultsHandler (request, h) {
-  const location = locationRepo.findByName(request.params.location) || locationRepo.findAll()[0];
+  const locationName = request.params.location || request.query.location || "England";
+  const location = locationRepo.findByName(locationName);
   const results = accidentsRankedByMakeForLocation(location.id);
 
   return h.view(
@@ -16,6 +17,7 @@ function resultsHandler (request, h) {
 
 function home(server) {
   server.route({ method: 'GET', path: '/results/{location}', handler: resultsHandler });
+  server.route({ method: 'GET', path: '/results', handler: resultsHandler });
 }
 
 
