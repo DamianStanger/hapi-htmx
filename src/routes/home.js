@@ -8,14 +8,17 @@ function thisYear() {
 }
 
 function homeHandler (request, h) {
-  const location = locationRepo.findByName(request.params.location) || locationRepo.findAll()[0];
+  const locationName = request.params.location || request.query.location || "England";
+  const location = locationRepo.findByName(locationName);
   const title = `Accidents in ${location.name}` ;
   const results = accidentsRankedByMakeForLocation(location.id);
+  const locations = locationRepo.findAll();
 
   return h.view('home', {
     title,
     location,
     results,
+    locations,
     message: 'Hello world!',
     year: thisYear
   });
@@ -24,6 +27,7 @@ function homeHandler (request, h) {
 function home(server) {
   server.route({ method: 'GET', path: '/', handler: homeHandler });
   server.route({ method: 'GET', path: '/location/{location}', handler: homeHandler });
+  server.route({ method: 'GET', path: '/search', handler: homeHandler });
 }
 
 

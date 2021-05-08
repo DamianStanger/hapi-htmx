@@ -9,6 +9,15 @@
       <li><a href="/location/greater-manchester" hx-get="/results/greater-manchester" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/greater-manchester">Manchester</a></li>
       <li><a href="/location/west-midlands" hx-get="/results/west-midlands" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/west-midlands">West Midlands</a></li>
     </ul>
+    <form method="get" action="/search">
+      <label for="locations">Choose a location:</label>
+      <select name="location" id="location">
+        {{#each locations}}
+        <option value="{{this.name}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+      <input type="submit" value="Submit">
+    </form>
     {{> results}}
   </div>
 </div>
