@@ -27,7 +27,7 @@ async function main() {
     engines: { html: Handlebars },
     relativeTo: __dirname,
     partialsPath: 'templates/partials',
-    path: 'templates',
+    path: 'templates/pages',
     layout: true,
     layoutPath: 'templates/layouts'
   });
