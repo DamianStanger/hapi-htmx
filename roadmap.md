@@ -14,9 +14,9 @@
   * ✔ When selection changes reload the page
   * ✔ Use htmx to load the results html fragment
   * ✔ Use htmx to keep url history for reloaded fragment
-* Use material design to make the page look reasonable (sort of...)
+* ✔ Use material design to make the page look reasonable (sort of...)
 * Change the page title when the results partial loads
-* Change the page header when the results partial loads
+* ✔ Change the page header when the results partial loads
 * Add dates in the sitemap and quicklinks
 * Ensure results on the home page show results for date range selected 
 * Add date filter
