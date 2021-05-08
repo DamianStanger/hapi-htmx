@@ -1,23 +1,31 @@
-<div>
-  <h1>{{title}}</h1>
-  <p>{{message}}</p>
-  <div>
-    <h3>Popular quick links:</h3>
-    <ul>
-      <li><a href="/location/england" hx-get="/results/england" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/england">England</a></li>
-      <li><a href="/location/london" hx-get="/results/london" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/london">London</a></li>
-      <li><a href="/location/greater-manchester" hx-get="/results/greater-manchester" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/greater-manchester">Manchester</a></li>
-      <li><a href="/location/west-midlands" hx-get="/results/west-midlands" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/west-midlands">West Midlands</a></li>
-    </ul>
-    <form method="get" action="/search" hx-get="/search" hx-target="#results" hx-swap="outerHTML" hx-push-url="true" hx-select="#results">
-      <label for="locations">Choose a location:</label>
-      <select name="location" id="location">
-        {{#each locations}}
-        <option value="{{this.name}}">{{this.name}}</option>
-        {{/each}}
-      </select>
-      <input type="submit" value="Submit">
-    </form>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__cell--span-2">
+      <form method="get" action="/search" hx-get="/search" hx-target="#results" hx-swap="outerHTML" hx-push-url="true" hx-select="#results">
+
+        <mat-form-field>
+          <mat-label>Locations</mat-label>
+          <select name="location" id="location" matNativeControl required>
+          {{#each locations}}
+            <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+          </select>
+        </mat-form-field>
+        <input type="submit" value="Submit" class="mdc-button mdc-button--raised">
+      </form>
+    </div>
+
     {{> results}}
+
+    <div  class="mdc-layout-grid__cell--span-2">
+      <h3>Popular quick links:</h3>
+      <ul class="mdc-list">
+        <li class="mdc-list-item"><a href="/location/england" hx-get="/results/england" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/england">England</a></li>
+        <li class="mdc-list-item"><a href="/location/london" hx-get="/results/london" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/london">London</a></li>
+        <li class="mdc-list-item"><a href="/location/greater-manchester" hx-get="/results/greater-manchester" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/greater-manchester">Manchester</a></li>
+        <li class="mdc-list-item"><a href="/location/west-midlands" hx-get="/results/west-midlands" hx-target="#results" hx-swap="outerHTML" hx-push-url="/location/west-midlands">West Midlands</a></li>
+      </ul>
+    </div>
+
   </div>
 </div>
